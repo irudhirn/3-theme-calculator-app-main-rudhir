@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root{
+
+/* Colors */
+
+/* Theme 1 */
+
+/* Backgrounds */
+--very-dark-desaturated-blue-main-background: hsl(222, 26%, 31%);
+--very-dark-desaturated-blue-toggle-background-keypad-background: hsl(223, 31%, 20%);
+--very-dark-desaturated-blue-screen-background: hsl(224, 36%, 15%);
+
+/* Keys */
+--desaturated-dark-blue-key-background: hsl(225, 21%, 49%);
+--desaturated-dark-blue-key-shadow: hsl(224, 28%, 35%);
+
+--red-key-background-toggle: hsl(6, 63%, 50%);
+--dark-red-key-shadow: hsl(6, 70%, 34%);
+
+--ligh-grayish-orange-key-background: hsl(30, 25%, 89%);
+--grayish-orange-key-shadow: hsl(28, 16%, 65%);
+
+/* Text */
+--very-dark-grayish-blue: hsl(221, 14%, 31%)
+--white: hsl(0, 0, 100%);
+
+/* Theme 2 */
+
+/* Backgrounds */
+--ligh-gray-main-background: hsl(0, 0%, 90%);
+--grayish-red-toggle-background-keypad-background: hsl(0, 5%, 81%);
+--very-light-gray-screen-background: hsl(0, 0%, 93%);
+
+/* Keys */
+--dark-moderate-cyan-key-background: hsl(185, 42%, 37%);
+--very-dark-cyan-key-shadow: hsl(185, 58%, 25%);
+
+--orange-key-background-toggle: hsl(25, 98%, 40%);
+--dark-orange-key-shadow: hsl(25, 99%, 27%);
+
+--light-grayish-yellow-key-background: hsl(45, 7%, 89%);
+--dark-grayish-orange-key-shadow: hsl(35, 11%, 61%);
+
+/* Text */
+--very-dark-grayish-yellow: hsl(60, 10%, 19%);
+--white-text: hsl(0, 0, 100%);
+
+/* Theme 3 */
+
+/* Backgrounds */
+--very-dark-violet-main-background: hsl(268, 75%, 9%);
+--very-dark-violet-toggle-background-keypad-background-screen-background: hsl(268, 71%, 12%);
+
+/* Keys */
+--dark-violet-key-background: hsl(281, 89%, 26%);
+--vivid-magenta-key-shadow: hsl(285, 91%, 52%);
+
+--pure-cyan-key-background-toggle: hsl(176, 100%, 44%);
+--soft-cyan-key-shadow: hsl(177, 92%, 70%);
+
+--very-dark-violet-key-background: hsl(268, 47%, 21%);
+--dark-magenta-keyshadow: hsl(290, 70%, 36%);
+
+/* Text */
+--light-yellow: hsl(52, 100%, 62%);
+--very-dark-blue: hsl(198, 20%, 13%);
+--white-text: hsl(0, 0, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+  transition: all 0.3s ease;
+}
+
+html{
+  /* By default the fpnt size is 16px, so 1rem is 16px, but it makes calculations difficult, like for 20px it's 1.25rem, 25px = 1.5625rem */
+  font-size: 62.5%
+  /* This 62.5% changes default font size to 10px, so 1rem becomes 10px and it's easy for calculations like 20px = 2rem, 16px = 1.6rem, 25px = 2.5rem */
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+body.theme1 {
+  background-color: var(--very-dark-desaturated-blue-main-background);
+}
+
+body.theme2 {
+  background-color: var(--ligh-gray-main-background);
+}
+  
+body.theme3 {
+  background-color: var(--very-dark-violet-main-background);
+}
+
+.container{
+  width: 37.5rem;
+  height: auto;
+  padding: 2.5rem;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  height: 5.4rem;
+  margin-bottom: 3rem;
+}
+
+.nav .nav__logo h1{
+  font-size: 3.2rem;
+}
+
+body.theme1 .nav .nav__logo h1{
+  color: #fff;
+}
+
+body.theme2 .nav .nav__logo h1{
+  color: var(--white-text);
+}
+
+body.theme3 .nav .nav__logo h1{
+  color: var(--light-yellow);
+}
+
+.nav .nav__themes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 15rem;
+  height: 100%;
+}
+
+.nav .nav__themes--text{
+  font-size: 1.4rem;
+  margin-top: 30px;
+}
+
+body.theme1 .nav .nav__themes--text{
+  color: #fff;
+}
+
+body.theme2 .nav .nav__themes--text{
+  color: var(--white-text);
+}
+
+body.theme3 .nav .nav__themes--text{
+  color: var(--light-yellow);
+}
+
+.nav__themes--radio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 7.5rem;
+}
+  
+.nav__themes--radio .theme {
+  height: 5.2rem;
+  width: 2.5rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: auto;
+  z-index: 10;
+}
+
+.nav__themes--radio .theme:hover{
+  cursor: pointer;
+}
+  
+.nav__themes--radio .theme input {
+  visibility: hidden;
+  display: none;
+}
+
+.nav__themes--radio .theme label{
+  font-size: 1.4rem;
+}
+
+.nav__themes--radio .theme label:hover{
+  cursor: pointer;
+}
+
+body.theme1 .nav__themes--radio .theme label{
+  color: white;
+}
+
+body.theme2 .nav__themes--radio .theme label{
+  color: var(--white-text);
+}
+
+body.theme3 .nav__themes--radio .theme label{
+  color: var(--light-yellow);
+}
+
+.nav__themes--radio .toggle{
+  position: absolute;
+  bottom: 0;
+  height: 2.8rem;
+  width: 100%;
+  border-radius: 5rem;
+}
+
+body.theme1 .nav__themes--radio .toggle{
+  background-color: var(--very-dark-desaturated-blue-toggle-background-keypad-background);
+}
+body.theme2 .nav__themes--radio .toggle{
+  background-color: var(--grayish-red-toggle-background-keypad-background);
+}
+body.theme3 .nav__themes--radio .toggle{
+  background-color: var(--very-dark-violet-toggle-background-keypad-background-screen-background);
+}
+  
+.nav__themes--radio .ball {
+  height: 1.8rem;
+  width: 1.8rem;
+  position: absolute;
+  bottom: 0.5rem;
+  border-radius: 5rem;
+}
+
+body.theme1 .nav__themes--radio .ball{
+  background-color: var(--red-key-background-toggle);
+}
+body.theme2 .nav__themes--radio .ball{
+  background-color: var(--orange-key-background-toggle);
+}
+body.theme3 .nav__themes--radio .ball{
+  background-color: var(--pure-cyan-key-background-toggle);
+}
+  
+body.theme1 .ball {
+  transform: translateX(0.6rem);
+}
+  
+body.theme2 .ball {
+  transform: translateX(2.9rem);
+}
+  
+body.theme3 .ball {
+  transform: translateX(5.2rem);
+}
+
+.screen{
+  min-height: 9rem;
+  height: auto;
+  width: 100%;
+  text-align: right;
+  font-size: 3.2rem;
+  padding: 2.8rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+body.theme1 .screen{
+  color: #fff;
+  background-color: var(--very-dark-desaturated-blue-screen-background);
+}
+body.theme2 .screen{
+  color: var(--very-dark-grayish-yellow);
+  background-color: var(--very-light-gray-screen-background);
+}
+body.theme3 .screen{
+  color: var(--light-yellow);
+  background-color: var(--very-dark-violet-toggle-background-keypad-background-screen-background);
+}
+
+.keypad{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 1.3rem;
+  grid-row-gap: 1.3rem;
+  padding: 2.4rem;
+  border-radius: 1rem;
+}
+
+body.theme1 .keypad{
+  background-color: var(--very-dark-desaturated-blue-toggle-background-keypad-background);
+}
+
+body.theme2 .keypad{
+  background-color: var(--grayish-red-toggle-background-keypad-background);
+}
+
+body.theme3 .keypad{
+  background-color: var(--very-dark-violet-toggle-background-keypad-background-screen-background);
+}
+
+.keypad button{
+  height: 6.2rem;
+  padding-top: 0.5rem;
+  border: none;
+  border-radius: 0.7rem;
+}
+
+.keypad button:hover{
+  cursor: pointer;
+}
+
+.keypad .span-2{
+  grid-column: span 2;
+}
+
+.keypad button[data-number]{
+  font-size: 2.7rem;
+}
+
+body.theme1 .keypad button[data-number]{
+  color: var(--very-dark-grayish-yellow);
+  background-color: var(--ligh-grayish-orange-key-background);
+  border-bottom: 0.4rem solid var(--grayish-orange-key-shadow);
+}
+
+body.theme2 .keypad button[data-number]{
+  color: var(--very-dark-grayish-yellow);
+  background-color: var(--light-grayish-yellow-key-background);
+  border-bottom: 0.4rem solid var(--dark-grayish-orange-key-shadow);
+}
+
+body.theme3 .keypad button[data-number]{
+  color: var(--light-yellow);
+  background-color: var(--very-dark-violet-key-background);
+  border-bottom: 0.4rem solid var(--dark-magenta-keyshadow);
+}
+
+.keypad button[data-operation]{
+  font-size: 2.8rem;
+}
+
+body.theme1 .keypad button[data-operation]{
+  color: var(--very-dark-grayish-yellow);
+  background-color: var(--ligh-grayish-orange-key-background);
+  border-bottom: 0.4rem solid var(--grayish-orange-key-shadow);
+}
+
+body.theme2 .keypad button[data-operation]{
+  color: var(--very-dark-grayish-yellow);
+  background-color: var(--light-grayish-yellow-key-background);
+  border-bottom: 0.4rem solid var(--dark-grayish-orange-key-shadow);
+}
+
+body.theme3 .keypad button[data-operation]{
+  color: var(--light-yellow);
+  background-color: var(--very-dark-violet-key-background);
+  border-bottom: 0.4rem solid var(--dark-magenta-keyshadow);
+}
+
+.keypad button[data-del]{
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: lighter;
+}
+
+body.theme1 .keypad button[data-del]{
+  background-color: var(--desaturated-dark-blue-key-background);
+  border-bottom: 0.4rem solid var(--desaturated-dark-blue-key-shadow);
+}
+
+body.theme2 .keypad button[data-del]{
+  background-color: var(--dark-moderate-cyan-key-background);
+  border-bottom: 0.4rem solid var(--very-dark-cyan-key-shadow);
+}
+
+body.theme3 .keypad button[data-del]{
+  background-color: var(--dark-violet-key-background);
+  border-bottom: 0.4rem solid var(--vivid-magenta-key-shadow);
+}
+
+
+.keypad button[data-reset]{
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+body.theme1 .keypad button[data-reset]{
+  background-color: var(--desaturated-dark-blue-key-background);
+  border-bottom: 0.4rem solid var(--desaturated-dark-blue-key-shadow);
+}
+
+body.theme2 .keypad button[data-reset]{
+  background-color: var(--dark-moderate-cyan-key-background);
+  border-bottom: 0.4rem solid var(--very-dark-cyan-key-shadow);
+}
+
+body.theme3 .keypad button[data-reset]{
+  background-color: var(--dark-violet-key-background);
+  border-bottom: 0.4rem solid var(--vivid-magenta-key-shadow);
+}
+
+
+.keypad button[data-equal]{
+  font-size: 1.8rem;
+}
+
+body.theme1 .keypad button[data-equal]{
+  color: var(--ligh-grayish-orange-key-background);
+  background-color: var(--red-key-background-toggle);
+  border-bottom: 0.4rem solid var(--dark-red-key-shadow);
+}
+body.theme2 .keypad button[data-equal]{
+  color: var(--ligh-grayish-orange-key-background);
+  background-color: var(--orange-key-background-toggle);
+  border-bottom: 0.4rem solid var(--dark-orange-key-shadow);
+}
+body.theme3 .keypad button[data-equal]{
+  color: var(--white-text);
+  background-color: var(--pure-cyan-key-background-toggle);
+  border-bottom: 0.4rem solid var(--soft-cyan-key-shadow);
+}
+
+@media(min-width: 641px){
+  body{
+    height: 100vh;
+  }
+
+  .container{
+    width: 54.2rem;
+    padding: 0;
+  }
+}
+
