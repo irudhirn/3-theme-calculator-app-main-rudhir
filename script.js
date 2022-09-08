@@ -148,7 +148,8 @@ del.addEventListener("click", (e) => {
     prev = "";
   } else if (!prev && !operator && cur) {
     if (screen.innerText.length > 1) {
-      cur = parseFloat(screen.innerText.trim().slice(0, -1));
+      // cur = parseFloat(screen.innerText.trim().slice(0, -1));
+      cur = screen.innerText.trim().slice(0, -1);
       screen.innerText = cur;
     } else {
       cur = "";
@@ -166,6 +167,7 @@ equal.addEventListener("click", (e) => {
   screen.innerText = cur;
   prev = "";
   operator = "";
+  hasDot = false;
 });
 
 document.addEventListener("keydown", (event) => {
@@ -196,10 +198,12 @@ document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "Backspace":
       del.click();
+      if (!cur.toString().trim().includes(".")) hasDot = false;
       break;
 
     case "c":
       reset.click();
+      if (!cur.toString().trim().includes(".")) hasDot = false;
       break;
   }
 });

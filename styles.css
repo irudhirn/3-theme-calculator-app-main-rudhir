@@ -90,6 +90,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
+  min-height: 70rem;
 }
 
 body.theme1 {
@@ -328,17 +329,32 @@ body.theme1 .keypad button[data-number]{
   background-color: var(--ligh-grayish-orange-key-background);
   border-bottom: 0.4rem solid var(--grayish-orange-key-shadow);
 }
+body.theme1 .keypad button[data-number]:hover{
+  background-color: var(--grayish-orange-key-shadow);
+  border-bottom: 0.4rem solid var(--ligh-grayish-orange-key-background);
+
+}
 
 body.theme2 .keypad button[data-number]{
   color: var(--very-dark-grayish-yellow);
   background-color: var(--light-grayish-yellow-key-background);
   border-bottom: 0.4rem solid var(--dark-grayish-orange-key-shadow);
 }
+body.theme2 .keypad button[data-number]:hover{
+  background-color: var(--dark-grayish-orange-key-shadow);
+  border-bottom: 0.4rem solid var(--light-grayish-yellow-key-background);
+
+}
 
 body.theme3 .keypad button[data-number]{
   color: var(--light-yellow);
   background-color: var(--very-dark-violet-key-background);
   border-bottom: 0.4rem solid var(--dark-magenta-keyshadow);
+}
+body.theme3 .keypad button[data-number]:hover{
+  background-color: var(--dark-magenta-keyshadow);
+  border-bottom: 0.4rem solid var(--very-dark-violet-key-background);
+
 }
 
 .keypad button[data-operation]{
@@ -350,17 +366,32 @@ body.theme1 .keypad button[data-operation]{
   background-color: var(--ligh-grayish-orange-key-background);
   border-bottom: 0.4rem solid var(--grayish-orange-key-shadow);
 }
+body.theme1 .keypad button[data-operation]:hover{
+  background-color: var(--grayish-orange-key-shadow);
+  border-bottom: 0.4rem solid var(--ligh-grayish-orange-key-background);
+
+}
 
 body.theme2 .keypad button[data-operation]{
   color: var(--very-dark-grayish-yellow);
   background-color: var(--light-grayish-yellow-key-background);
   border-bottom: 0.4rem solid var(--dark-grayish-orange-key-shadow);
 }
+body.theme2 .keypad button[data-operation]:hover{
+  background-color: var(--dark-grayish-orange-key-shadow);
+  border-bottom: 0.4rem solid var(--light-grayish-yellow-key-background);
+
+}
 
 body.theme3 .keypad button[data-operation]{
   color: var(--light-yellow);
   background-color: var(--very-dark-violet-key-background);
   border-bottom: 0.4rem solid var(--dark-magenta-keyshadow);
+}
+body.theme3 .keypad button[data-operation]:hover{
+  background-color: var(--dark-magenta-keyshadow);
+  border-bottom: 0.4rem solid var(--very-dark-violet-key-background);
+
 }
 
 .keypad button[data-del]{
@@ -373,15 +404,30 @@ body.theme1 .keypad button[data-del]{
   background-color: var(--desaturated-dark-blue-key-background);
   border-bottom: 0.4rem solid var(--desaturated-dark-blue-key-shadow);
 }
+body.theme1 .keypad button[data-del]:hover{
+  background-color: var(--desaturated-dark-blue-key-shadow);
+  border-bottom: 0.4rem solid var(--desaturated-dark-blue-key-background);
+
+}
 
 body.theme2 .keypad button[data-del]{
   background-color: var(--dark-moderate-cyan-key-background);
   border-bottom: 0.4rem solid var(--very-dark-cyan-key-shadow);
 }
+body.theme2 .keypad button[data-del]:hover{
+  background-color: var(--very-dark-cyan-key-shadow);
+  border-bottom: 0.4rem solid var(--dark-moderate-cyan-key-background);
+
+}
 
 body.theme3 .keypad button[data-del]{
   background-color: var(--dark-violet-key-background);
   border-bottom: 0.4rem solid var(--vivid-magenta-key-shadow);
+}
+body.theme3 .keypad button[data-del]:hover{
+  background-color: var(--vivid-magenta-key-shadow);
+  border-bottom: 0.4rem solid var(--dark-violet-key-background);
+
 }
 
 
@@ -394,15 +440,30 @@ body.theme1 .keypad button[data-reset]{
   background-color: var(--desaturated-dark-blue-key-background);
   border-bottom: 0.4rem solid var(--desaturated-dark-blue-key-shadow);
 }
+body.theme1 .keypad button[data-reset]:hover{
+  
+  background-color: var(--desaturated-dark-blue-key-shadow);
+  border-bottom: 0.4rem solid var(--desaturated-dark-blue-key-background);
+}
 
 body.theme2 .keypad button[data-reset]{
   background-color: var(--dark-moderate-cyan-key-background);
   border-bottom: 0.4rem solid var(--very-dark-cyan-key-shadow);
 }
+body.theme2 .keypad button[data-reset]:hover{
+  background-color: var(--very-dark-cyan-key-shadow);
+  border-bottom: 0.4rem solid var(--very-dark-cyan-key-shadow);
+
+}
 
 body.theme3 .keypad button[data-reset]{
   background-color: var(--dark-violet-key-background);
   border-bottom: 0.4rem solid var(--vivid-magenta-key-shadow);
+}
+body.theme3 .keypad button[data-reset]:hover{
+  background-color: var(--vivid-magenta-key-shadow);
+  border-bottom: 0.4rem solid var(--dark-violet-key-background);
+
 }
 
 
@@ -415,15 +476,30 @@ body.theme1 .keypad button[data-equal]{
   background-color: var(--red-key-background-toggle);
   border-bottom: 0.4rem solid var(--dark-red-key-shadow);
 }
+body.theme1 .keypad button[data-equal]:hover{
+  background-color: var(--dark-red-key-shadow);
+  border-bottom: 0.4rem solid var(--red-key-background-toggle);
+
+}
 body.theme2 .keypad button[data-equal]{
   color: var(--ligh-grayish-orange-key-background);
   background-color: var(--orange-key-background-toggle);
   border-bottom: 0.4rem solid var(--dark-orange-key-shadow);
 }
+body.theme2 .keypad button[data-equal]:hover{
+  background-color: var(--dark-orange-key-shadow);
+  border-bottom: 0.4rem solid var(--orange-key-background-toggle);
+
+}
 body.theme3 .keypad button[data-equal]{
   color: var(--white-text);
   background-color: var(--pure-cyan-key-background-toggle);
   border-bottom: 0.4rem solid var(--soft-cyan-key-shadow);
+}
+body.theme3 .keypad button[data-equal]:hover{
+  background-color: var(--soft-cyan-key-shadow);
+  border-bottom: 0.4rem solid var(--pure-cyan-key-background-toggle);
+
 }
 
 @media(min-width: 641px){
